@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morse Code Encoder/Decoder</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom right, #add8e6, #90ee90); /* Pastel gradient background */
+            color: #333;
+            text-align: center;
+        }
+
+        h1, h2 {
+            color: #008080; /* Teal color for headings */
+        }
+
+        label {
+            margin-top: 10px;
+            display: block;
+            color: #008080;
+        }
+
+        input[type="text"], input[type="file"] {
+            width: 80%;
+            padding: 8px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid #008080;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #008080;
+            color: white;
+            padding: 10px 20px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #004040; /* Darker teal on hover */
+        }
+
+        #video {
+            width: 80%;
+            max-width: 640px;
+            height: auto;
+            margin: 10px 0;
+        }
+
+        #qrOutput {
+            color: #008080;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        #switchCameraBtn {
+            display: none;
+            background-color: #008080;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Morse Code Encoder/Decoder</h1>
+
+    <label for="inputText">Enter Text:</label>
+    <input type="text" id="inputText" placeholder="Hello World">
+    <button onclick="encodeText()">Encode to Morse</button>
+    <p id="outputMorse"></p>
+
+    <label for="inputMorse">Enter Morse Code:</label>
+    <input type="text" id="inputMorse" placeholder=".... . .-.. .-.. ---  .-- --- .-. .-.. -..">
+    <button onclick="decodeMorse()">Decode to Text</button>
+    <p id="outputText"></p>
+
+    <label for="inputImage">Upload Image:</label>
+    <input type="file" id="inputImage" accept="image/*">
+    <button onclick="scanImage()">Scan Image for Morse Code</button>
+
+    <h2>QR Code Scanner</h2>
+    <video id="video" autoplay playsinline></video>
+    <div id="qrOutput"></div>
+    <button id="switchCameraBtn" onclick="switchCamera()">Switch Camera</button>
+    <button onclick="startScanner()">Start QR Code Scanner</button>
+    <button onclick="scanImage()">Scan Image for QR Code</button>
+
+    <script src="https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.js"></script>
+    <script src="https://unpkg.com/@zxing/library@0.23.3"></script>
+    <script>
+        // Paste the JavaScript code here
+    </script>
+</body>
+</html>
